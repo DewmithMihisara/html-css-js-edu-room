@@ -19,7 +19,7 @@
         <!--Case Two-->
         <div class="col">
             <h1>Input an Image Url</h1>
-            <input id="url" class="form-control" type="url" placeholder="Input Image URL">
+            <input id="url" class="form-control" type="url" placeholder="Input Image URL (../../assets/img/images/img_1.png)">
             <div id="img" style="height: 50vh" class="mt-2 border shadow"></div>
             <button id="btn2" class="mt-2 btn btn-danger">Change Image</button>
         </div>
@@ -33,7 +33,10 @@
     document.querySelector("#btn1").addEventListener("click",function(){
         document.querySelector("#head").style.color='red';
     });
-
+    document.querySelector("#btn2").addEventListener("click",function (){
+        document.querySelector("#img").style.backgroundImage=`url('${document.querySelector("#url").value}')`;
+    });
 </script>
 </body>
 </html>
+
