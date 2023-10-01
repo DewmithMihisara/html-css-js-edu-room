@@ -32,6 +32,7 @@
     document.querySelector("#btn").addEventListener("click",function(){
         let text=document.querySelector('input').value;
         let newItem = document.createElement("li");
+        newItem.setAttribute("class","list-group-item")
         newItem.innerText=text;
 
         document.querySelector('#list').appendChild(newItem);
