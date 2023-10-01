@@ -29,7 +29,13 @@
     //Get Input Text Value
     //Create a list element
     //Add it to the Ordered List
+    document.querySelector("#btn").addEventListener("click",function(){
+        let text=document.querySelector('input').value;
+        let newItem = document.createElement("li");
+        newItem.innerText=text;
 
+        document.querySelector('#list').appendChild(newItem);
+    });
 
 </script>
 </body>
