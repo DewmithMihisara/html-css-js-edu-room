@@ -8,35 +8,25 @@
 </head>
 <body>
 <section class="container">
-    <h1>Task Generator.!</h1>
+    <h1>Counter.!</h1>
     <div class="row">
         <div class="col-4">
-            <input id="txt" class="form-control" type="text" placeholder="Input a Task">
-            <button id="btn" class="btn btn-danger mt-2">Add Task</button>
+            <input id="txt" class="form-control" type="number" placeholder="Input a Number" value="0">
+            <button id="btnStart" class="btn btn-primary mt-2">Start</button>
+            <button id="btnStop" class="btn btn-danger mt-2">Stop</button>
+            <button id="btnMinus" class="btn btn-warning mt-2">-</button>
+            <button id="btnIncrement" class="btn btn-success mt-2">+</button>
         </div>
-        <div class="offset-1 col-3 shadow overflow-x-hidden" style="height: 70vh">
-            <ol id="list" class="list-group p-2">
-                <li class="list-group-item">Task One</li>
-            </ol>
+        <div class="offset-1 col-3 shadow overflow-x-hidden d-flex justify-content-center align-items-center"
+             style="height: 50vh">
+            <h1 id="display" class="text-danger" style="font-size: 8em">0</h1>
         </div>
     </div>
 </section>
 
 
-
 <script>
-    //Bind an event for Change Text Btn
-    //Get Input Text Value
-    //Create a list element
-    //Add it to the Ordered List
-    document.querySelector("#btn").addEventListener("click",function(){
-        let text=document.querySelector('input').value;
-        let newItem = document.createElement("li");
-        newItem.setAttribute("class","list-group-item")
-        newItem.innerText=text;
 
-        document.querySelector('#list').appendChild(newItem);
-    });
 
 </script>
 </body>
