@@ -23,10 +23,37 @@
         </div>
     </div>
 </section>
-
-
 <script>
+    let stbtn = document.querySelector('#btnStart');
+    let spbtn = document.querySelector('#btnStop');
+    let mnbtn = document.querySelector('#btnMinus');
+    let adbtn = document.querySelector('#btnIncrement');
+    let text = document.querySelector('#txt');
+    let display = document.querySelector('#display')
+    var timer;
 
+    stbtn.addEventListener("click",function(){
+
+        if(parseInt(text.value)!==0){
+            display.innerText = parseInt(text.value);
+            text.value=0;
+        }
+        timer = setInterval(function(){
+            display.innerText = parseInt(display.innerText)+1;
+        },400);
+    });
+
+    spbtn.addEventListener("click",function(){
+        clearInterval(timer);
+    });
+
+    adbtn.addEventListener("click",function(){
+        display.innerText = parseInt(display.innerText)+1;
+    });
+
+    mnbtn.addEventListener("click",function(){
+        display.innerText = parseInt(display.innerText)-1;
+    });
 
 </script>
 </body>
