@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>counter</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+</head>
+<body>
+<section class="container">
+    <h1>Counter.!</h1>
+    <div class="row">
+        <div class="col-4">
+            <input id="txt" class="form-control" type="number" placeholder="Input a Number" value="0">
+            <button id="btnStart" class="btn btn-primary mt-2">Start</button>
+            <button id="btnStop" class="btn btn-danger mt-2">Stop</button>
+            <button id="btnMinus" class="btn btn-warning mt-2">-</button>
+            <button id="btnIncrement" class="btn btn-success mt-2">+</button>
+        </div>
+        <div class="offset-1 col-3 shadow overflow-x-hidden d-flex justify-content-center align-items-center"
+             style="height: 50vh">
+            <h1 id="display" class="text-danger" style="font-size: 8em">0</h1>
+        </div>
+    </div>
+</section>
+<script>
+    const stbtn = document.querySelector('#btnStart');
+    const spbtn = document.querySelector('#btnStop');
+    const mnbtn = document.querySelector('#btnMinus');
+    const adbtn = document.querySelector('#btnIncrement');
+    const text = document.querySelector('#txt');
+    const display = document.querySelector('#display')
+    var timer;
+
+    stbtn.addEventListener("click",function(){
+        clearInterval(timer);
+        if(parseInt(text.value)!==0){
+            display.innerText = parseInt(text.value);
+            text.value=0;
+        }
+        timer = setInterval(function(){
+            display.innerText = parseInt(display.innerText)+1;
+        },400);
+    });
+
+    spbtn.addEventListener("click",function(){
+        clearInterval(timer);
+    });
+
+    adbtn.addEventListener("click",function(){
+        display.innerText = parseInt(display.innerText)+1;
+    });
+
+    mnbtn.addEventListener("click",function(){
+        display.innerText = parseInt(display.innerText)-1;
+    });
+
+</script>
+</body>
+</html>
